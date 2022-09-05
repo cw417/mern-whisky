@@ -48,9 +48,23 @@ export default function Edit() {
     const newReview = {
       name: name,
       type: type,
-      info: info.split(/[\s,\s]+/)
-    }
+      info: info.split(', ')
+    };
+    return newReview;
+  }
 
+  async function onSubmit(e) {
+    e.preventDefault();
+    const editedReview = updateReview();
+    await fetch(`http://localhost:5000/update/${params.id}`, {
+      method: "POST",
+      body: JSON.stringify(editedReview),
+      headers: {
+        'Content-Type': 'application/json'
+      },
+    });
+  
+    navigate("/");
   }
 
   return (
@@ -77,7 +91,7 @@ export default function Edit() {
               <input className='inpt' ref={infoRef} type='text' placeholder='info'/>
             </div>
             <div>
-              <button className='btn'>Update</button>
+              <button className='btn' onClick={onSubmit}>Update</button>
             </div>
         </div>
       </div>

@@ -16,9 +16,9 @@ export default function Create() {
     const newReview = {
       name: nameRef.current.value,
       type: typeRef.current.value,
-      info: infoRef.current.value.split(/[\s,\s]+/)
+      info: infoRef.current.value.split(', ')
     }
-  
+
     await fetch('http://localhost:5000/whisky/add', {
       method: 'POST',
       headers: {
