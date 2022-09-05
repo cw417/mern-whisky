@@ -36,11 +36,23 @@ export default function Edit() {
   }, [params.id, navigate]);
   
   function setInputs(rev) {
-    nameRef.current.value = rev.name
-    typeRef.current.value = rev.type
-    infoRef.current.value = rev.info
+    nameRef.current.value = rev.name;
+    typeRef.current.value = rev.type;
+    infoRef.current.value = rev.info.join(', ');
   }
-  
+
+  function updateReview() {
+    const name = nameRef.current.value;
+    const type = typeRef.current.value;
+    const info = infoRef.current.value;
+    const newReview = {
+      name: name,
+      type: type,
+      info: info.split(/[\s,\s]+/)
+    }
+
+  }
+
   return (
     <div>
       <div>
