@@ -5,7 +5,7 @@ export default function Review({ review }) {
     <div>
       <div>
         <div>
-          {Review.name}
+          {review.name}
         </div>
       </div>
     </div>
