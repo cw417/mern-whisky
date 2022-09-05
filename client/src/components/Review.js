@@ -1,8 +1,8 @@
 import React from 'react';
-import { FiTrash }from 'react-icons/fi'
+import { FiTrash, FiEdit }from 'react-icons/fi'
+import { Link } from 'react-router-dom';
 
 export default function Review({ review, deleteReview }) {
-
 
   function displayInfo() {
     return (
@@ -21,6 +21,13 @@ export default function Review({ review, deleteReview }) {
       <div className='flex flex-row items-center'>
         <div>
           {review.name} <span className='mx-2'>({review.type})</span>
+        </div>
+        <div>
+          <Link to={`/edit/${review._id}`}>
+            <div className='btn'>
+              <FiEdit />
+            </div>
+          </Link>
         </div>
         <div>
           <button className='btn' onClick={() => deleteReview(review._id)}><FiTrash /></button>

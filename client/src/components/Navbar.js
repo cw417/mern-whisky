@@ -11,9 +11,6 @@ export default function Navbar() {
         <NavLink className='nav-link' to='/create'>
           <div>Create</div>
         </NavLink>
-        <NavLink className='nav-link' to='/edit'>
-          <div>Edit</div>
-        </NavLink>
       </nav>
     </div>
   )
