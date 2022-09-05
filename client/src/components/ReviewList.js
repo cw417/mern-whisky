@@ -26,13 +26,13 @@ export default function WhiskyList() {
   }, [reviews.length]);
   
   // This method will delete a record
-  async function deleteRecord(id) {
+  async function deleteReview(id) {
    await fetch(`http://localhost:5000/${id}`, {
      method: "DELETE"
    });
 
-   const newRecords = reviews.filter((el) => el._id !== id);
-   setReviews(newRecords);
+   const newReviews = reviews.filter((el) => el._id !== id);
+   setReviews(newReviews);
   }
 
   function reviewList() {
@@ -41,6 +41,7 @@ export default function WhiskyList() {
         <Review 
           key={index}
           review={review}
+          deleteReview={deleteReview}
         />
       )
     })

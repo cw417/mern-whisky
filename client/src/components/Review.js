@@ -1,6 +1,7 @@
 import React from 'react';
+import { FiTrash }from 'react-icons/fi'
 
-export default function Review({ review }) {
+export default function Review({ review, deleteReview }) {
 
 
   function displayInfo() {
@@ -17,8 +18,13 @@ export default function Review({ review }) {
 
   return (
     <div className='my-4'>
-      <div>
-        {review.name} <span className='ml-2'>({review.type})</span>
+      <div className='flex flex-row items-center'>
+        <div>
+          {review.name} <span className='mx-2'>({review.type})</span>
+        </div>
+        <div>
+          <button className='btn' onClick={() => deleteReview(review._id)}><FiTrash /></button>
+        </div>
       </div>
       <div>
         <div className='ml-4'>
