@@ -6,7 +6,7 @@ export default function Review({ review, deleteReview }) {
 
   function displayInfo() {
     return (
-      review.info.map((item, index) => {
+      review.info.split(', ').map((item, index) => {
         return (
         <div className='ml-6' key={index}>
           {item}

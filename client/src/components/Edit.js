@@ -38,7 +38,7 @@ export default function Edit() {
   function setInputs(rev) {
     nameRef.current.value = rev.name;
     typeRef.current.value = rev.type;
-    infoRef.current.value = rev.info.join(', ');
+    infoRef.current.value = rev.info;
   }
 
   function updateReview() {
@@ -48,7 +48,7 @@ export default function Edit() {
     const newReview = {
       name: name,
       type: type,
-      info: info.split(', ')
+      info: info
     };
     return newReview;
   }

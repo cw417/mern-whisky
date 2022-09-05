@@ -16,7 +16,7 @@ export default function Create() {
     const newReview = {
       name: nameRef.current.value,
       type: typeRef.current.value,
-      info: infoRef.current.value.split(', ')
+      info: infoRef.current.value
     }
 
     await fetch('http://localhost:5000/whisky/add', {
@@ -46,19 +46,19 @@ export default function Create() {
               <label>Name:</label>
             </div>
             <div>
-              <input className='inpt' ref={nameRef} type='text' />
+              <input className='inpt w-1/2' ref={nameRef} type='text' />
             </div>
             <div>
               <label>Type:</label>
             </div>
             <div>
-              <input className='inpt' ref={typeRef} type='text' />
+              <input className='inpt w-1/2' ref={typeRef} type='text' />
             </div>
             <div>
               <label>Info:</label>
             </div>
             <div>
-              <input className='inpt' ref={infoRef} type='text' />
+              <input className='inpt w-1/2' ref={infoRef} type='text' />
             </div>
             <div>
               <button className='btn' onClick={onSubmit}>Create</button>
