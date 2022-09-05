@@ -1,7 +1,17 @@
 import React from 'react'
+import { NavLink } from "react-router-dom";
 
 export default function Navbar() {
   return (
-    <div>Navbar</div>
+    <div>
+      <nav className='flex flex-row'>
+        <NavLink className='nav-link' to='/'>
+          <div>Home</div>
+        </NavLink>
+        <NavLink className='nav-link' to='/create'>
+          <div>Create</div>
+        </NavLink>
+      </nav>
+    </div>
   )
 }
