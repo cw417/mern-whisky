@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useRef } from 'react';
 import { useNavigate } from 'react-router';
 
 export default function Create() {
@@ -16,7 +16,7 @@ export default function Create() {
     const newReview = {
       name: nameRef.current.value,
       type: typeRef.current.value,
-      info: infoRef.current.value
+      info: infoRef.current.value.split(',')
     }
   
     await fetch('http://localhost:5000/whisky/add', {
@@ -37,11 +37,10 @@ export default function Create() {
 
     navigate('/');
   }
-
   return (
     <div>
       <div>
-        <div className='text-3xl my-4'>Create New Review</div>
+        <div className='text-3xl my-4'>Create Review</div>
         <div className='my-4'>
             <div>
               <label>Name:</label>

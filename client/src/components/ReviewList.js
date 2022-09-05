@@ -24,6 +24,16 @@ export default function WhiskyList() {
   
     return;
   }, [reviews.length]);
+  
+  // This method will delete a record
+  async function deleteRecord(id) {
+   await fetch(`http://localhost:5000/${id}`, {
+     method: "DELETE"
+   });
+
+   const newRecords = reviews.filter((el) => el._id !== id);
+   setReviews(newRecords);
+  }
 
   function reviewList() {
     return reviews.map((review, index) => {
@@ -38,7 +48,7 @@ export default function WhiskyList() {
 
   return (
     <div className='flex flex-col items-center'>
-      <div className='text-3xl'>
+      <div className='text-3xl mt-2 my-6'>
         Reviews
       </div> 
       <div>{reviewList()}</div>
