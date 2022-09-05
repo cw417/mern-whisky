@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 
 export default function Navbar() {
   return (
-    <div>
+    <div className='bg-blue-400'>
       <nav className='flex flex-row'>
         <NavLink className='nav-link' to='/'>
           <div>Home</div>

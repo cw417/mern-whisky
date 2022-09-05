@@ -49,7 +49,7 @@ export default function WhiskyList() {
 
   return (
     <div className='flex flex-col items-center'>
-      <div className='text-3xl mt-2 my-6'>
+      <div className='text-3xl mt-6 mb-2'>
         Reviews
       </div> 
       <div>{reviewList()}</div>
